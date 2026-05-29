@@ -1,60 +1,232 @@
-# Fetching Data From an API
+# Data Collection with APIs and Web Scraping in Python
 
-This project demonstrates how to fetch data from The Movie Database (TMDb) API using Python. The script retrieves the top-rated movies data from the API, processes it, and stores the data in a CSV file for further analysis. Below is an overview of the steps implemented in the script:
+This repository demonstrates two fundamental data acquisition techniques used in data science and analytics:
 
-## Steps
+1. **Fetching Data from an API**
+2. **Web Scraping Data from Websites**
 
-1. **Import Required Libraries**:
+These projects showcase how to collect, process, and store data using Python for further analysis and visualization.
 
-   - `pandas` for data manipulation and analysis.
-   - `requests` for making HTTP requests to the API.
+---
 
-2. **API Request**:
+# Project 1: Fetching Data From an API
 
-   - The TMDb API endpoint for top-rated movies is queried using an API key.
-   - Pagination is handled to fetch data across multiple pages (up to 428 pages).
+This project demonstrates how to fetch data from The Movie Database (TMDb) API using Python. The script retrieves top-rated movie data, processes the results, and stores the data in a CSV file for further analysis.
 
-3. **Data Extraction and Processing**:
+## Steps Implemented
 
-   - The script extracts specific fields: `id`, `title`, `overview`, `release_date`, `popularity`, `vote_average`, and `vote_count`.
-   - The data from all pages is combined into a single `DataFrame` for analysis.
+### 1. Import Required Libraries
 
-4. **Error Handling**:
+* pandas for data manipulation and analysis
+* requests for making HTTP requests to the API
 
-   - The script checks the HTTP response status code to ensure successful requests.
-   - In case of a failed request, an error message is logged with the corresponding page number.
+### 2. API Request
 
-5. **Data Storage**:
+* Connected to the TMDb API endpoint.
+* Retrieved top-rated movie data using an API key.
+* Handled pagination to fetch movie information across multiple pages.
 
-   - The combined data is saved as a CSV file named `movies.csv` for future use.
+### 3. Data Extraction and Processing
 
-6. **Output**:
+Extracted important movie attributes including:
 
-   - The script prints the first few rows of the `DataFrame` and its shape to confirm the data is loaded correctly.
+* id
+* title
+* overview
+* release_date
+* popularity
+* vote_average
+* vote_count
 
-## Files
+The data from all pages was combined into a single DataFrame.
 
-- **`movies.csv`**: Contains the extracted data of top-rated movies.
-- **Script**: The Python script used for fetching and processing the data.
+### 4. Error Handling
 
-## Usage
+* Checked HTTP response status codes.
+* Logged errors whenever a request failed.
 
-To run the script, ensure you have:
+### 5. Data Storage
 
-- Python installed.
-- The required libraries (`pandas` and `requests`) installed.
-- A valid API key for TMDb.
+* Stored the final processed dataset in a CSV file.
+* Created a structured dataset suitable for analysis and visualization.
 
-Run the script in your Python environment to fetch the data and save it as a CSV file.
+### Output
 
-## Notes
+The script:
 
-- Modify the API key in the script to use your own TMDb API key.
-- The script is designed to handle large data and combines data efficiently using `pd.concat`.
+* Displays the first few rows of the dataset.
+* Shows the dataset dimensions.
+* Saves the final dataset as:
 
-## Additional Suggestion
+`movies.csv`
 
-Consider using [RapidAPI](https://rapidapi.com/collection/list-of-free-apis), a platform providing free public APIs for developers. It offers a wide variety of APIs, making it a versatile option for expanding your projects.
+---
 
-This project serves as a foundation for working with APIs, handling pagination, and storing API responses in a structured format.
+# Project 2: Web Scraping Using Python
 
+This project demonstrates how to collect data directly from websites through web scraping techniques.
+
+The notebook shows how to send requests to web pages, parse HTML content, extract useful information, and organize the data into a structured format for analysis.
+
+## Steps Implemented
+
+### 1. Sending Requests
+
+* Connected to web pages using HTTP requests.
+* Retrieved webpage content for analysis.
+
+### 2. Parsing HTML
+
+* Parsed HTML documents using Python libraries.
+* Identified target elements and attributes containing useful information.
+
+### 3. Data Extraction
+
+* Extracted relevant information from webpages.
+* Collected structured data from unstructured HTML sources.
+
+### 4. Data Cleaning
+
+* Removed unnecessary content.
+* Standardized extracted information.
+* Prepared data for analysis.
+
+### 5. Data Storage
+
+* Converted scraped information into structured tabular format.
+* Stored data using Pandas DataFrames.
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* Requests
+* Jupyter Notebook
+* BeautifulSoup (if applicable)
+
+---
+
+## Skills Demonstrated
+
+### API Skills
+
+* REST API Integration
+* JSON Data Processing
+* Pagination Handling
+* HTTP Requests
+* Data Collection Automation
+
+### Web Scraping Skills
+
+* HTML Parsing
+* Website Data Extraction
+* Data Cleaning
+* Web Data Collection
+* Structured Data Creation
+
+### Data Analysis Skills
+
+* Data Wrangling
+* Data Manipulation
+* CSV File Handling
+* Pandas DataFrames
+* Exploratory Data Preparation
+
+---
+
+## Repository Structure
+
+```text
+├── Fetching_Data_From_an_API.ipynb
+├── fetching_data_from_an_api.py
+├── web scraping.ipynb
+├── movies.csv
+└── README.md
+```
+
+---
+
+## Requirements
+
+Install the required packages:
+
+```bash
+pip install pandas requests beautifulsoup4
+```
+
+---
+
+## How to Run
+
+### API Project
+
+1. Obtain a TMDb API key.
+2. Replace the API key in the script.
+3. Run:
+
+```bash
+python fetching_data_from_an_api.py
+```
+
+4. The output dataset will be saved as:
+
+```text
+movies.csv
+```
+
+### Web Scraping Project
+
+1. Open the notebook:
+
+```bash
+web scraping.ipynb
+```
+
+2. Execute the notebook cells.
+3. The extracted data will be processed and stored for analysis.
+
+---
+
+## Learning Outcomes
+
+Through these projects, I learned:
+
+* Working with real-world APIs
+* Handling JSON responses
+* Managing paginated data
+* Extracting information from websites
+* Parsing HTML documents
+* Cleaning and preprocessing data
+* Building structured datasets
+* Using Python for automated data collection
+
+---
+
+## Important Notes
+
+* Replace the API key with your own TMDb API key before running the API project.
+* Respect website Terms of Service when performing web scraping.
+* Follow robots.txt guidelines where applicable.
+* These projects are intended for educational and learning purposes.
+
+---
+
+## Future Improvements
+
+* Automate data pipelines.
+* Store data in SQL databases.
+* Build dashboards using Power BI or Tableau.
+* Create data visualizations using Matplotlib and Seaborn.
+* Deploy data collection workflows in the cloud.
+
+---
+
+## Author
+
+**Anusha**
+
+Aspiring Software Engineer | Data Enthusiast | Python Developer
+
+GitHub: https://github.com/Anusha0501
